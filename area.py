@@ -1,4 +1,4 @@
-
+from tests import common_cases, edge_cases, error_cases
 def calcular_area_rectangulo(base, altura):
     """
     Calcula el área de un rectángulo.
@@ -23,8 +23,7 @@ def calcular_area_triangulo(base, altura):
 
 # Ejemplo de uso
 if __name__  == "__main__":
-    try:
-        print("Área del rectángulo:", calcular_area_rectangulo(5, 10))
-        print("Área del triángulo:", calcular_area_triangulo(5, 10)) 
-    except ValueError as e:
-        print(e)
+    # TODO: Usar unittest
+    common_cases(calcular_area_rectangulo, calcular_area_triangulo)
+    edge_cases(calcular_area_rectangulo, calcular_area_triangulo)
+    error_cases(calcular_area_rectangulo, calcular_area_triangulo)
