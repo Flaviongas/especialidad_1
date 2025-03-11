@@ -23,15 +23,21 @@ class Tests(unittest.TestCase):
     def test_edge_cases(self):
         try:
             print("Casos límite: \n")
-
+            
+            # Máximo
+            self.assertEqual(area_rectangulo(1.79e308, 2), float("inf"))
+            print("Máximos: OK \n")
+            
             # Enteros
             self.assertEqual(area_rectangulo(0, 0), 0)
             self.assertEqual(area_triangulo(0, 0), 0)
             print("Enteros: OK \n")
+            
             # Floats
             self.assertEqual(area_rectangulo(0.0, 0.0), 0.0)
             self.assertEqual(area_triangulo(0.0, 0.0), 0.0)
             print("Floats: OK \n")
+            
             # Negativos
             with self.assertRaises(ValueError):
                 area_rectangulo(-5, 10)
